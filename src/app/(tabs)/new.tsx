@@ -1,7 +1,8 @@
 import { Text } from "react-native"
 
-export default function About() {
+export default function CreatePost() {
     return (
-        <Text>HELLO WORLD</Text>
+        <Text>CreatePost
+        </Text>
     )
 }

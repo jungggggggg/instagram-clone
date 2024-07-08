@@ -1,7 +1,7 @@
 import { Text } from "react-native"
 
-export default function About() {
+export default function ProfileScreen() {
     return (
-        <Text>HELLO WORLD</Text>
+        <Text>Profile</Text>
     )
 }
