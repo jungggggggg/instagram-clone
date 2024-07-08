@@ -1,7 +1,7 @@
 import { Tabs } from "expo-router";
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 
-
+//탭 버튼페이지. 선택하면 선택한 화면으로 이동
 export default function TabsLayout() {
     return (
     <Tabs screenOptions={{ tabBarActiveTintColor: 'black', tabBarShowLabel: false}}>

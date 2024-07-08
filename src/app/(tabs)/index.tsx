@@ -1,9 +1,19 @@
-import { View, Text } from "react-native"
+//홈페이지
+import { FlatList } from "react-native"
+import posts from '~/assets/data/posts.json'
+import PostListItem from '~/src/components/PostListItem';
 
+//포스트 양식
 export default function FeedScreen() {
+
+
     return (
-        <View className={'bg-slate-600 flex-1 items-center justify-center m-10'}>
-    <Text className="text-5xl font-bold text-blue-500">Feed</Text>
-    </View>
+        <FlatList 
+         data={posts}
+         contentContainerStyle={{ gap: 10 }}
+         /* postlistitem 컴포넌트를 components/PostlistItem에서 받아왔음 */
+         renderItem={({ item }) => <PostListItem post={item}/>}
+         showsVerticalScrollIndicator={false}
+        />
     )
 }
