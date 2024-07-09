@@ -2,9 +2,8 @@ import { Text, View, Image, TextInput, Pressable } from "react-native"
 import { useEffect, useState } from "react"
 import * as ImagePicker from 'expo-image-picker';
 import Button from "~/src/components/Button";
-import { upload } from "cloudinary-react-native";
-import { cld } from "~/src/lib/cloudinary";
-import { UploadApiResponse } from "cloudinary-react-native/lib/typescript/src/api/upload/model/params/upload-params";
+import {uploadImage } from "~/src/lib/cloudinary";
+
 
 
 export default function CreatePost() {
@@ -34,30 +33,7 @@ export default function CreatePost() {
     }
   };
 
-  const uploadImage = async (file: string) => {
 
-    const options = {
-      upload_preset: 'Default',
-      unsigned: true,
-    }
-
-    return new Promise<UploadApiResponse>(async (resolve, reject) => {
-      // upload the image to cloudinary
-
-      await upload(cld, {
-        file,
-        options: options,
-        callback: (error, response) => {
-          if (error || !response) {
-            reject(error);
-          } else {
-            resolve(response);
-          }
-        },
-      });
-    });
-
-  };
 
   const createPost = async () => {
     //save the post in database
